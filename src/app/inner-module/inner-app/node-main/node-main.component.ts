@@ -1,18 +1,21 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ViewContainerRef, Input, OnChanges } from '@angular/core';
-import { NodeService } from './node.service';
+import { NodeServiceService } from '../node-vone/node-service.service';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { DialogComponent } from '../dialog.component';
 
 @Component({
-  selector: 'app-node',
-  templateUrl: './node.component.html',
-  styleUrls: ['./node.component.scss']
+  selector: 'app-node-main',
+  templateUrl: './node-main.component.html',
+  styleUrls: ['./node-main.component.scss']
 })
-export class NodeComponent implements OnChanges, AfterViewInit {
+export class NodeMainComponent implements OnInit {
 
   @Input() nodes: any[];
   @ViewChild('nodes', { read: ViewContainerRef, static: true }) viewContainerRef: ViewContainerRef;
-  constructor(private nodeService: NodeService, private simpleModalService: SimpleModalService) {
+  constructor(private nodeService: NodeServiceService, private simpleModalService: SimpleModalService) {
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   ngAfterViewInit() {
@@ -43,4 +46,5 @@ export class NodeComponent implements OnChanges, AfterViewInit {
       });
     }
   }
+
 }

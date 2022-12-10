@@ -8,11 +8,7 @@ import { IndexComponent } from "./shared/page/index/index.component";
 
 const routes: Routes = [
   {
-    path: 'page1',
-    component: AddNewItemComponent
-  },
-  {
-    path: 'page2',
+    path: '',
     component: InnerAppComponent
   }
 ];

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainNodeComponent } from './main-node.component';
+import { NodeVOneComponent } from './node-vone.component';
 
-describe('MainNodeComponent', () => {
-  let component: MainNodeComponent;
-  let fixture: ComponentFixture<MainNodeComponent>;
+describe('NodeVOneComponent', () => {
+  let component: NodeVOneComponent;
+  let fixture: ComponentFixture<NodeVOneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainNodeComponent ]
+      declarations: [ NodeVOneComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainNodeComponent);
+    fixture = TestBed.createComponent(NodeVOneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

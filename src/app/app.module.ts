@@ -53,7 +53,8 @@ import { InnerModuleModule } from "./inner-module/inner-module.module";
     MatExpansionModule,
     MatToolbarModule,
     MatSelectModule,
-    DragDropModule
+    DragDropModule,
+    InnerModuleModule
   ],
   providers: [
 

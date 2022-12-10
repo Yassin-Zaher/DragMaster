@@ -1,3 +1,4 @@
+
 import {
   ComponentRef,
   ComponentFactoryResolver,
@@ -8,9 +9,10 @@ import {
 } from '@angular/core';
 import { DynamicNodeComponent } from '../dynamic-node.component';
 import { jsPlumb } from 'jsplumb';
-
-@Injectable()
-export class NodeService {
+@Injectable({
+  providedIn: 'root'
+})
+export class NodeServiceService {
 
   jsPlumbInstance = jsPlumb.getInstance();
   private rootViewContainer: any;
