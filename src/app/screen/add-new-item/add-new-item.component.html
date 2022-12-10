@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="in-out-list-container" cdkDropListGroup>
+    <div class="list-container">
+      <div class="list-title">IN</div>
+      <hr class="solid">
+      <div cdkDropList [cdkDropListData]="inItemList" class="list" (cdkDropListDropped)="drop($event)">
+        <div class="item-container" *ngFor="let item of inItemList" cdkDrag>
+          <app-item [item]="item"></app-item>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="list-title">OUT</div>
+      <hr class="solid">
+      <div cdkDropList [cdkDropListData]="outItemList" class="list" (cdkDropListDropped)="drop($event)">
+        <div class="item-container" *ngFor="let item of outItemList" cdkDrag>
+          <app-item [item]="item"></app-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="add-item-form">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <mat-select [(ngModel)]="newItem.name">
+          <mat-option *ngFor="let name of names" [value]="name">
+            {{name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <mat-select [(ngModel)]="newItem.price">
+          <mat-option *ngFor="let price of prices" [value]="price">
+            {{price}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <div>
+        <label style="font-weight: bold" (click)="pickImage" for="pickImage">Select image</label>
+        <input #pickImage style="visibility: hidden" id="pickImage" type="file"
+          (change)="handleFileInput($event.target)" />
+      </div>
+      <img style="margin-top: 10px" width="200px" *ngIf="this.newItem.imageBase64" [src]="this.newItem.imageBase64"
+        class="image">
+    </div>
+  </div>
+  <div class="action-button-container">
+    <div>
+      <button (click)="addItem('in')" mat-button mat-raised-button>ADD TO IN</button>
+    </div>
+    <div style="margin-top: 15px">
+      <button (click)="addItem('out')" mat-button mat-raised-button>ADD TO OUT</button>
+    </div>
+
+  </div>
+</div>

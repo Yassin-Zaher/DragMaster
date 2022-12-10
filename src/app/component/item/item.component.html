@@ -1,0 +1,12 @@
+<div class="container mat-elevation-z4">
+  <div class="image-container">
+    <!--    <img src="assets/images/landing-page/poster.png">-->
+    <img [src]="item.imageBase64">
+  </div>
+  <div class="details-container">
+    <div class="detail"><b>
+        {{item?.name}}
+      </b></div>
+    <div class="detail">{{item?.price}}</div>
+  </div>
+</div>
